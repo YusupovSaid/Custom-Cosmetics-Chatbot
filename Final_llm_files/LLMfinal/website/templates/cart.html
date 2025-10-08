@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<section style="padding: 40px;">
+  <h2>Your Shopping Cart</h2>
+  {% if cart_items %}
+  <table style="width: 100%; background: white; border-radius: 10px; padding: 20px;">
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Remove</th>
+    </tr>
+    {% for item in cart_items %}
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>${{ item.price * item.quantity }}</td>
+      <td><a href="/remove-from-cart/{{ item.id }}">❌</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p style="margin-top: 20px;"><strong>Total: ${{ total }}</strong></p>
+  <a href="/checkout" style="background: #000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Proceed to Checkout</a>
+  {% else %}
+  <p>Your cart is empty.</p>
+  {% endif %}
+</section>
+{% endblock %}

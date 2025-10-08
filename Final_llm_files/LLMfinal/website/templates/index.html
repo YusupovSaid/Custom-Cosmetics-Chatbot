@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Our Products</h1>
+{% for p in products %}
+    <div style="margin-bottom: 20px;">
+        <b>{{ p.name }}</b>: ${{ p.price }}<br>
+        {{ p.description }}<br>
+        {% if p.image %}
+            <img src="{{ url_for('static', filename='images/' ~ p.image) }}" alt="{{ p.name }}" style="width:200px; margin-top:10px;">
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
+

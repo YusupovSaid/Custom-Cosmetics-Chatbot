@@ -1,0 +1,13 @@
+Flask
+flask_sqlalchemy
+werkzeug
+sentence-transformers
+transformers
+torch
+langchain
+langchain-huggingface
+langchain-chroma
+langchain-community
+chromadb
+huggingface-hub
+datasets

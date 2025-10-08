@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<section style="padding: 40px;">
+  <h2>Shop Our Products</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for product in products %}
+    <div style="width: 200px; padding: 10px; border: 1px solid #ccc; border-radius: 10px; background: white;">
+      <img src="{{ url_for('static', filename='images/' ~ product.image) }}" style="width: 100%;" alt="{{ product.name }}">
+      <h4>{{ product.name }}</h4>
+      <p>${{ product.price }}</p>
+      <a href="/add-to-cart/{{ product.id }}" style="color: white; background: #000; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Add to Cart</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<section style="padding: 40px;">
+  <h2>Beauty Tips & Articles</h2>
+  {% for post in blog_posts %}
+    <article style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 10px;">
+      <h3>{{ post.title }}</h3>
+      <p><em>{{ post.date }}</em></p>
+      <p>{{ post.excerpt }}</p>
+      <a href="/blog/{{ post.slug }}" style="color: #6a295d;">Read more →</a>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}
