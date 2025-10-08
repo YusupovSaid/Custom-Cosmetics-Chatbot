@@ -1,4 +1,4 @@
-# Custom-Cosmetics-Chatbot
+# Custom-AI-Cosmetics-Chatbot
 
 This is a custom chatbot application for cosmetics products, built with Flask, featuring user authentication, product management, and an AI-powered chatbot using fine-tuned language models.
 
